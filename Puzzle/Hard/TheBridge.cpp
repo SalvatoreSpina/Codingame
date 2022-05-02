@@ -6,8 +6,8 @@
 using namespace std;
 
 vector<string> lanes(4);
-std::string::size_type lastHole;
-std::string::size_type trackLength;
+string::size_type lastHole;
+string::size_type trackLength;
 
 class State
 {
@@ -17,7 +17,7 @@ class State
         vector<unsigned int> y;
 };
 
-pair<unsigned int, std::string> decide(State state)
+pair<unsigned int, string> decide(State state)
 {
     // Wait
     if (state.x >= lastHole)
@@ -41,7 +41,7 @@ pair<unsigned int, std::string> decide(State state)
             {
                 if (lanes[y][x] == '0')
                 {
-                    newState.y.erase(std::find(newState.y.begin(), newState.y.end(), y));
+                    newState.y.erase(find(newState.y.begin(), newState.y.end(), y));
                     break;
                 }
             }
@@ -69,7 +69,7 @@ pair<unsigned int, std::string> decide(State state)
             {
                 if (lanes[y][x] == '0')
                 {
-                    newState.y.erase(std::find(newState.y.begin(), newState.y.end(), y));
+                    newState.y.erase(find(newState.y.begin(), newState.y.end(), y));
                     break;
                 }
             }
@@ -94,7 +94,7 @@ pair<unsigned int, std::string> decide(State state)
         for (auto y : state.y)
         {
             if (lanes[y][newState.x] == '0')
-                newState.y.erase(std::find(newState.y.begin(), newState.y.end(), y));
+                newState.y.erase(find(newState.y.begin(), newState.y.end(), y));
         }
 
         if (newState.y.size() > 0)
@@ -109,7 +109,7 @@ pair<unsigned int, std::string> decide(State state)
     }
 
     // Can move up?
-    if (std::find(state.y.begin(), state.y.end(), 0) == state.y.end())
+    if (find(state.y.begin(), state.y.end(), 0) == state.y.end())
     {
         State newState = state;
         newState.x += newState.speed;
@@ -151,7 +151,7 @@ pair<unsigned int, std::string> decide(State state)
     }
 
     // Can move down?
-    if (std::find(state.y.begin(), state.y.end(), lanes.size()-1) == state.y.end())
+    if (find(state.y.begin(), state.y.end(), lanes.size()-1) == state.y.end())
     {
         State newState = state;
         newState.x += newState.speed;
@@ -205,7 +205,7 @@ pair<unsigned int, std::string> decide(State state)
             {
                 if (lanes[y][x] == '0')
                 {
-                    newState.y.erase(std::find(newState.y.begin(), newState.y.end(), y));
+                    newState.y.erase(find(newState.y.begin(), newState.y.end(), y));
                     break;
                 }
             }
