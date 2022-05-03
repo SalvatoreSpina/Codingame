@@ -1,4 +1,4 @@
-// Normal version
+// Readable version
 
 #include<iostream>
 #define a std::cout<<

@@ -1,4 +1,4 @@
-// Normal version
+// Readable version
 
 #include <stdio.h>
 void f(int i){char s[5]="NSWE\n";printf("%c",s[i]);}

@@ -1,4 +1,4 @@
-# Normal version
+# Readable version
 
 n,a=int(input()),[int(i)for i in input().split()]
 m=(0,999)[n>0]

@@ -1,12 +1,13 @@
-# Normal version
+# Readable version
 
-x,y,X,Y=map(int,input().split())
+a,b,c,d=map(int,input().split())
 while 1:
- m,u=(((["",u],["N",u-1])[u>y]),["S",u+1])[u<y]
- m,c=((([m,c],[m+"W",c-1])[c>x]),[m+"E",c+1])[c<x]
- print(m)
+    x,y=(c<a)-(a<c),(d<b)-(b<d)
+    print((" SN"[y]+" EW"[x]).strip())
+    c+=x
+    d+=y
 
 # Code golf
-a=input()
-x,y,X,Y=map(int,a.split())
-while 1:if(y>Y)a("N")if(Y>y)a("S")if(X>x)a("W")if()
+
+a,b,c,d=map(int,input().split())
+while 1:x,y=(c<a)-(a<c),(d<b)-(b<d);print((" SN"[y]+" EW"[x]).strip());c+=x;d+=y
