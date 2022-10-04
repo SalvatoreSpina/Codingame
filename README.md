@@ -16,8 +16,8 @@ It includes:
 
 ## What I achieved?
 
-![codingame-assets](assets/trophy.png)
 ![codingame-cert](assets/cert.png)
+![codingame-assets](assets/trophy.png)
 
 ## My personal experiece
 
